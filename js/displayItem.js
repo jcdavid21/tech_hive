@@ -87,6 +87,6 @@ productBtns.forEach((btn) => {
         localStorage.setItem('selectedProduct', JSON.stringify(productData));
         
         // Redirect to the item details page
-        window.location.href = '/components/item.html';
+        window.location.href = 'components/item.html';
     });
 });
