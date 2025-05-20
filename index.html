@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Premium Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/content.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="img-con">
+                <img src="/assets/logo.jpeg" alt="Logo">
+            </div>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Search Bar Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="nav-section" id="navSection">
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/components/products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="/components/bestSeller.html"><i class="fas fa-star"></i> Best Seller</a></li>
+                <li><a href="/components/aboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li>
+                    <a href="/components/cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+                <li><a href="/components/login.html" id="profileLink"><i class="fas fa-user"></i> <span id="profileText">Log
+                            In</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Slider Section -->
+        <section class="hero-slider" id="heroSlider">
+            <div class="slider-container">
+                <div class="slide active">
+                    <img src="/assets/cover-1.avif" alt="Premium Collection">
+                    <div class="slide-content">
+                        <h1>Premium Collection</h1>
+                        <p>Discover our latest arrivals with exclusive designs</p>
+                        <a href="/components/products.html">
+                            <button class="cta-button">Shop Now</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/assets/cover-2.avif" alt="Best Sellers">
+                    <div class="slide-content">
+                        <h1>Best Sellers</h1>
+                        <p>Most loved products by our customers</p>
+                        <a href="/components/products.html">
+                            <button class="cta-button">Explore</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/assets/cover-3.avif" alt="Special Offers">
+                    <div class="slide-content">
+                        <h1>Special Offers</h1>
+                        <p>Limited time deals you don't want to miss</p>
+                        <a href="/components/products.html">
+                            <button class="cta-button">Get Deals</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="slider-nav">
+                <button class="nav-dot active" onclick="currentSlide(1)"></button>
+                <button class="nav-dot" onclick="currentSlide(2)"></button>
+                <button class="nav-dot" onclick="currentSlide(3)"></button>
+            </div>
+
+            <!-- Slider Arrows -->
+            <button class="slider-arrow prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-arrow next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2>Why Choose TechHive?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Free Fast Shipping</h3>
+                        <p>Get your electronics delivered within 24 hours with our premium delivery service</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Extended Warranty</h3>
+                        <p>2-year warranty on all electronics with free repair and replacement service</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Expert Support</h3>
+                        <p>24/7 technical support from our team of certified electronics experts</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3>Easy Returns</h3>
+                        <p>30-day hassle-free returns with full refund guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Products Section -->
+        <section class="trending-section">
+            <div class="container">
+                <h2>Trending Electronics</h2>
+                <p class="section-subtitle">Discover the latest and most popular gadgets</p>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="/assets/products/infinix.webp" alt="Smartphone">
+                            <span class="product-badge">New</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Infinix Hot 50 Pro+ Smartphone with FREE Lenovo HF130 Wired Earphone</h3>
+                            <div class="product-price">
+                                &#8369; 8,499.00
+                                <span class="original-price">&#8369; 10,499.00</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(2,456 reviews)</span>
+                            </div>
+
+                            <div class="hidden-features">
+                                <input type="hidden" class="feature"
+                                    value="Infinix Hot 50 Pro+ Smartphone with FREE Lenovo HF130 Wired Earphone">
+                                <input type="hidden" class="feature" value="Infinix">
+                                <input type="hidden" class="feature" value="Smartphone">
+                                <input type="hidden" class="feature" value="+6GB RAM + 128GB Storage">
+                                <input type="hidden" class="feature" value="6.78 inches">
+                                <input type="hidden" class="feature" value="5000 mAh Battery">
+                                <input type="hidden" class="feature" value="Android 13">
+                                <input type="hidden" class="feature" value="64MP + 2MP Dual Rear Camera">
+                                <!-- description -->
+                                <input type="hidden" class="description"
+                                    value="This product is a smartphone that comes with a 6.78-inch display and is powered by Android 13. It features a dual rear camera setup with a 64MP main camera and a 2MP secondary camera. The phone has 6GB of RAM and 128GB of storage, along with a powerful 5000 mAh battery. It also includes a FREE Lenovo HF130 wired earphone for an enhanced audio experience.">
+                            </div>
+                            <button class="product-btn">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="/assets/products/ASUS-ROG.webp" alt="Laptop">
+                            <span class="product-badge">Hot</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Asus-ROG Strix G17 2023 17.3” QHD 240Hz Gaming Laptop, Ryzen 9-7845HX, RTX 4060, 16GB RAM, 1TB SSD</h3>
+                            <div class="product-price">
+                                &#8369; 80,499
+                                <span class="original-price">&#8369; 100,899</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(1,892 reviews)</span>
+                            </div>
+                                <div class="hidden-features">
+                                    <input type="hidden" class="feature" value="Asus-ROG Strix G17 2023 17.3” QHD 240Hz Gaming Laptop, Ryzen 9-7845HX, RTX 4060, 16GB RAM, 1TB SSD">
+                                    <input type="hidden" class="feature" value="Asus">
+                                    <input type="hidden" class="feature" value="+16GB RAM + 1TB SSD">
+                                    <input type="hidden" class="feature" value="17.3 inches">
+                                    <input type="hidden" class="feature" value="90WHrs Battery">
+                                    <input type="hidden" class="feature" value="Windows 11 Home">
+                                    <input type="hidden" class="feature" value="RTX 4060 Graphics Card">
+                                    <!-- description -->
+                                    <input type="hidden" class="description" value="This product is a high-performance gaming laptop with a 17.3-inch QHD display and a 240Hz refresh rate. It is powered by an AMD Ryzen 9-7845HX processor and an NVIDIA RTX 4060 graphics card, making it ideal for gaming and demanding applications. The laptop comes with 16GB of RAM and a 1TB SSD for fast storage and multitasking capabilities.">
+                                </div>
+                            <button class="product-btn">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="/assets/products/MUW33.jpeg" alt="Headphones">
+                            <span class="product-badge">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Beats Solo 4 — On-Ear Wireless Headphones — Cloud Pink</h3>
+                            <div class="product-price">
+                                &#8369; 9,490.00
+                                <span class="original-price">&#8369; 10,490.00</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(3,421 reviews)</span>
+                            </div>
+                                <div class="hidden-features">
+                                    <input type="hidden" class="feature" value="Beats Solo 4 — On-Ear Wireless Headphones — Cloud Pink">
+                                    <input type="hidden" class="feature" value="Beats">
+                                    <input type="hidden" class="feature" value="+40 hours Battery Life">
+                                    <input type="hidden" class="feature" value="On-Ear Design">
+                                    <input type="hidden" class="feature" value="Bluetooth 5.0">
+                                    <input type="hidden" class="feature" value="Noise Isolation">
+                                    <input type="hidden" class="feature" value="Built-in Microphone">
+                                    <!-- description -->
+                                    <input type="hidden" class="description" value="This product is a pair of on-ear wireless headphones with a sleek design and a vibrant Cloud Pink color. It features Bluetooth 5.0 technology for seamless connectivity, up to 40 hours of battery life, and a built-in microphone for hands-free calls. The headphones are designed to provide noise isolation for an immersive listening experience.">
+                                </div>
+                            <button class="product-btn">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/apple-watch.webp" alt="Smart Watch">
+                            <span class="product-badge">Limited</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Apple Watch Series 10 with Sport Band</h3>
+                            <div class="product-price">
+                                &#8369; 28,490.00
+                                <span class="original-price">&#8369; 21,490.00</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(1,567 reviews)</span>
+                            </div>
+                                <div class="hidden-features">
+                                    <input type="hidden" class="feature" value="Apple Watch Series 10 with Sport Band">
+                                    <input type="hidden" class="feature" value="Apple">
+                                    <input type="hidden" class="feature" value="Smart Watch">
+                                    <input type="hidden" class="feature" value="+32GB Storage + 1.9 inches Display">
+                                    <input type="hidden" class="feature" value="GPS + Cellular Connectivity">
+                                    <input type="hidden" class="feature" value="Heart Rate Monitor">
+                                    <input type="hidden" class="feature" value="Water Resistant">
+                                    <input type="hidden" class="feature" value="Fitness Tracking">
+                                    <!-- description -->
+                                    <input type="hidden" class="description" value="This product is a smartwatch that combines advanced technology with a stylish design. It features a 1.9-inch display, GPS and cellular connectivity, and a heart rate monitor. The watch is water-resistant and includes fitness tracking capabilities, making it perfect for an active lifestyle.">
+                                </div>
+                            <button class="product-btn">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="container">
+                <h2>Shop by Category</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <img src="/assets/SmartPhones.jpg" alt="Smartphones">
+                        <div class="category-overlay">
+                            <h3>Smartphones</h3>
+                            <p>Latest models from top brands</p>
+                            <a href="/components/products.html">
+                                <button class="category-btn">Explore</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="/assets/Laptops.avif" alt="Laptops">
+                        <div class="category-overlay">
+                            <h3>Laptops & Computers</h3>
+                            <p>Powerful machines for work & gaming</p>
+                            <a href="/components/products.html">
+                                <button class="category-btn">Explore</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="assets/headphones.jpeg" alt="Audio">
+                        <div class="category-overlay">
+                            <h3>Audio & Sound</h3>
+                            <p>Premium headphones & speakers</p>
+                            <a href="/components/products.html">
+                                <button class="category-btn">Explore</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="/assets/smartwatches.jpg" alt="Wearables">
+                        <div class="category-overlay">
+                            <h3>Wearables</h3>
+                            <p>Smart watches & fitness trackers</p>
+                            <a href="/components/products.html">
+                                <button class="category-btn">Explore</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="/assets/console.avif" alt="Gaming">
+                        <div class="category-overlay">
+                            <h3>Gaming</h3>
+                            <p>Consoles, accessories & gear</p>
+                            <a href="/components/products.html">
+                                <button class="category-btn">Explore</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Section -->
+        <section class="brands-section">
+            <div class="container">
+                <h2>Trusted Brands</h2>
+                <p>We partner with the world's leading electronics manufacturers</p>
+                <div class="brands-grid">
+                    <div class="brand-logo">
+                        <img src="/assets/logos/apple.png" alt="Apple">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="/assets/logos/samsung.png" alt="Samsung">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="/assets/logos/infinix.png" alt="Infinix">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="/assets/logos/asus.png" alt="Asus">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="/assets/logos/realme.png" alt="Realme">
+                    </div>
+                    <div class="brand-logo">
+                        <img src="/assets/logos/honor.png" alt="Honor">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Section -->
+        <section class="promo-section">
+            <div class="container">
+                <div class="promo-content">
+                    <h2 class="promo-title">Flash Sale!</h2>
+                    <p class="promo-subtitle">Up to 70% off on selected electronics</p>
+                    <div class="countdown-timer" id="countdown">
+                        <div class="time-unit">
+                            <span class="time-number" id="days">00</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="hours">00</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="minutes">00</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="seconds">00</span>
+                            <span class="time-label">Seconds</span>
+                        </div>
+                    </div>
+                    <button class="cta-button">Shop Sale Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2>Testimonials</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"TechHive has the best prices and fastest delivery. Got my new laptop
+                            in just one day!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Outstanding customer service and quality products. My go-to store
+                            for all electronics!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Mike Chen</h4>
+                                <span>Tech Enthusiast</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Great warranty program and hassle-free returns. Highly recommend
+                            TechHive!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Emily Davis</h4>
+                                <span>Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "Everything I bought from TechHive has been top-notch. The quality is cheap"    
+                        </p>
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>
+                                    Chelsea Delacruz
+                                </h4>
+                                <span>
+                                    Verified Buyer
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "The customer service is top-notch! They helped me choose the right"    
+                        </p>
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>
+                                    Josh Ivan
+                                </h4>
+                                <span>
+                                    Verified Buyer
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Get the latest tech news, exclusive deals, and product launches</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/components/products.html">Products</a></li>
+                        <li><a href="/components/aboutUs.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="/components/support.html">Support</a></li>
+                        <li><a href="/components/contactUs.html">Contact Us</a></li>
+                        <li><a href="/components/termsCondition.html">Terms and Condition</a></li>
+                        <li><a href="components/privacyPolicy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +63 976 209 6892</p>
+                    <p><i class="fas fa-envelope"></i> Techive@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Our Lady Of Fatima University</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Premium Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include the JavaScript files -->
+    <script src="js/navbar.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/displayItem.js"></script>
+</body>
+
+</html>

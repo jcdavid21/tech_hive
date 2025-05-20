@@ -1,0 +1,102 @@
+body{
+    background: white !important;
+}
+.terms-hero {
+    background-color: #f7f9fc;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.terms-hero h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.terms-hero p {
+    color: #7f8c8d;
+    font-size: 1rem;
+}
+
+.terms-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.terms-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.terms-section:last-child {
+    border-bottom: none;
+}
+
+.terms-section h2 {
+    color: #373737;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.terms-section p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.terms-section a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terms-section a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.contact-info li {
+    padding: 8px 0;
+    color: #555;
+}
+
+.contact-info li i {
+    color: #e0c25d;
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .terms-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .terms-section h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .terms-hero {
+        padding: 40px 15px;
+    }
+    
+    .terms-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .terms-container {
+        margin: 20px auto;
+    }
+}

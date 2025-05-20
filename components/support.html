@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Tech Hive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/support.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="img-con">
+                <img src="../assets/logo.jpeg" alt="Logo">
+            </div>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Search Bar Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products..." id="searchInput">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="nav-section" id="navSection">
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="bestSeller.html"><i class="fas fa-star"></i> Best Seller</a></li>
+                <li><a href="aboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+                <li><a href="login.html" id="profileLink"><i class="fas fa-user"></i> <span id="profileText">Log In</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Support Hero Section -->
+    <div class="support-hero">
+        <h1>How Can We Help You?</h1>
+        <p>At Tech Hive, your satisfaction is our priority. Our dedicated support team is here to assist you every step of the way.</p>
+    </div>
+
+    <!-- Support Options -->
+    <div class="support-container">
+        <div class="support-options">
+            <div class="support-card">
+                <i class="fas fa-headset"></i>
+                <h3>Customer Service</h3>
+                <p>Get fast, friendly help with product information, orders, returns, and general inquiries from our customer service team.</p>
+                
+            </div>
+            
+            <div class="support-card">
+                <i class="fas fa-tools"></i>
+                <h3>Technical Support</h3>
+                <p>Experiencing issues with your tech? Our experts are ready to troubleshoot and guide you through any technical problems.</p>
+                
+            </div>
+            
+            <div class="support-card">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>Returns & Exchanges</h3>
+                <p>We offer a hassle-free process if something doesn't work out. Learn about our return policy and how to initiate returns.</p>
+                
+            </div>
+            
+            <div class="support-card">
+                <i class="fas fa-truck"></i>
+                <h3>Order Tracking</h3>
+                <p>Stay updated on your order status from checkout to delivery with our real-time tracking system.</p>
+               
+            </div>
+            
+            <div class="support-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Warranty Assistance</h3>
+                <p>Need help with warranty claims or product replacements? Our team will guide you through the process.</p>
+                
+            </div>
+            
+            <div class="support-card">
+                <i class="fas fa-question-circle"></i>
+                <h3>FAQs</h3>
+                <p>Find answers to commonly asked questions about our products, services, and policies.</p>
+                
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How do I place an order? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>To place an order, browse our products and add your desired items to your cart. When you're ready to checkout, click on the cart icon, review your items, and follow the checkout process. You'll need to provide shipping information and payment details to complete your purchase.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What payment methods do you accept? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept various payment methods including credit/debit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. All payments are processed securely through our encrypted payment system.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How long will it take to receive my order? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Delivery times depend on your location and the shipping method chosen. Standard shipping typically takes 3-5 business days within the country, while express shipping options can deliver within 1-2 business days. International shipping may take 7-14 business days.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What is your return policy? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a 30-day return policy for most products. Items must be in their original condition with all packaging and accessories. Some products may have specific return conditions. Please contact our customer service team to initiate a return.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How do I track my order? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Once your order ships, you'll receive a confirmation email with a tracking number. You can use this number on our website's tracking page or the carrier's website to monitor your shipment's progress.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What if my product arrives damaged? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>If your product arrives damaged, please take photos of the damage and contact our customer service team within 48 hours of delivery. We'll arrange for a replacement or refund depending on your preference and product availability.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How do I activate my product warranty? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Most products come with a manufacturer's warranty that is automatically activated upon purchase. Some products may require registration on the manufacturer's website. Your invoice serves as proof of purchase for warranty claims.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section" id="contact">
+            <h2>Get in Touch</h2>
+            <p>Our support team is available Monday through Friday, 9 AM to 6 PM</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+63 976 209 6892</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Techive@gmail.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Our Lady Of Fatima University</p>
+                </div>
+            </div>
+            
+            <div class="social-support">
+                <p>Connect with us on social media for the fastest response:</p>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                        <li><a href="termsCondition.html">Terms and Condition</a></li>
+                        <li><a href="privacyPolicy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +63 976 209 6892</p>
+                    <p><i class="fas fa-envelope"></i> Techive@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Our Lady Of Fatima University</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tech Hive. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/navbar.js"></script>
+    <script>
+        // Function to toggle FAQ answers
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // Toggle the active class
+            answer.classList.toggle('active');
+            
+            // Change the icon
+            if (answer.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+    </script>
+</body>
+</html>

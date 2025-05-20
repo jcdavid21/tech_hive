@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/item.css">
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+
+<body>
+    <!-- Main Content -->
+
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="img-con">
+                <img src="/assets/logo.jpeg" alt="Logo">
+            </div>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Search Bar Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="nav-section" id="navSection">
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="bestSeller.html"><i class="fas fa-star"></i> Best Seller</a></li>
+                <li><a href="aboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+                <li><a href="login.html" id="profileLink"><i class="fas fa-user"></i> <span id="profileText">Log
+                            In</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="#">Home</a> <span>/</span>
+            <a href="#">Electronics</a> <span>/</span>
+            <a href="#">Smartphones</a> <span>/</span>
+            <span>Infinix Hot 50 Pro+</span>
+        </div>
+
+        <!-- Product Detail -->
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="/api/placeholder/400/320" alt="Infinix Hot 50 Pro+" id="mainProductImage">
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-badge">New</span>
+                <h1 class="product-title">Infinix Hot 50 Pro+ Smartphone with FREE Lenovo HF130 Wired Earphone</h1>
+
+                <div class="product-rating">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="rating-count">(2,456 reviews)</span>
+                </div>
+
+                <div class="product-price">
+                    &#8369; 8,499.00
+                    <span class="original-price">&#8369; 10,499.00</span>
+                </div>
+                <div class="price-savings">You save: &#8369; 2,000.00 (19%)</div>
+
+                <p class="product-description">
+
+                </p>
+
+                <div class="key-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 6.8" FHD+ 120Hz Display</li>
+                        <li><i class="fas fa-check-circle"></i> MediaTek Helio G99 Processor</li>
+                        <li><i class="fas fa-check-circle"></i> 8GB RAM + 128GB Storage</li>
+                        <li><i class="fas fa-check-circle"></i> 108MP Ultra Clear Camera</li>
+                        <li><i class="fas fa-check-circle"></i> 5000mAh Battery with 33W Fast Charging</li>
+                    </ul>
+                </div>
+
+                <div class="quantity-selector">
+                    <label>Quantity:</label>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity()">-</button>
+                        <input type="number" id="quantityInput" class="quantity-input" value="1" min="1" max="10">
+                        <button class="quantity-btn" onclick="incrementQuantity()">+</button>
+                    </div>
+                </div>
+
+                <button class="add-to-cart-btn" onclick="addToCart()">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#help">Support</a></li>
+                        <li><a href="#returns">Contact Us</a></li>
+                        <li><a href="#shipping">Terms and Condition</a></li>
+                        <li><a href="#track">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +63 976 209 6892</p>
+                    <p><i class="fas fa-envelope"></i> Techive@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Our Lady Of Fatima University</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Premium Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // This script will load product data from localStorage and update the product detail page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve the selected product from localStorage
+            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+
+            console.log('Selected Product:', selectedProduct);
+
+            // Check if we have product data
+            if (selectedProduct) {
+                // Update page title
+                document.title = selectedProduct.title;
+
+                // Update breadcrumb
+                const breadcrumbItems = document.querySelectorAll('.breadcrumb span');
+                if (breadcrumbItems.length > 0) {
+                    breadcrumbItems[breadcrumbItems.length - 1].textContent = selectedProduct.title;
+                }
+
+                // Update product badge
+                const productBadge = document.querySelector('.product-badge');
+                if (productBadge && selectedProduct.badge) {
+                    productBadge.textContent = selectedProduct.badge;
+                    productBadge.style.display = selectedProduct.badge ? 'inline-block' : 'none';
+                }
+
+                const productDescription = document.querySelector('.product-description');
+                if (productDescription) {
+                    productDescription.innerHTML = selectedProduct.description || 'No description available.';
+                }
+
+                // Update product title
+                const productTitle = document.querySelector('.product-title');
+                if (productTitle) {
+                    productTitle.textContent = selectedProduct.title;
+                }
+
+                // Update product rating
+                if (selectedProduct.rating) {
+                    const ratingStars = document.querySelectorAll('.rating-stars i');
+                    for (let i = 0; i < ratingStars.length; i++) {
+                        if (i < Math.floor(selectedProduct.rating)) {
+                            ratingStars[i].className = 'fas fa-star'; // Full star
+                        } else if (i === Math.floor(selectedProduct.rating) && selectedProduct.rating % 1 !== 0) {
+                            ratingStars[i].className = 'fas fa-star-half-alt'; // Half star
+                        } else {
+                            ratingStars[i].className = 'far fa-star'; // Empty star
+                        }
+                    }
+                }
+
+                // Update rating count
+                const ratingCount = document.querySelector('.rating-count');
+                if (ratingCount && selectedProduct.ratingCount) {
+                    ratingCount.textContent = selectedProduct.ratingCount;
+                }
+
+                // Update product price
+                const productPrice = document.querySelector('.product-price');
+                if (productPrice) {
+                    // Keep only the price part at the beginning
+                    const currencySymbol = '₱';
+                    const priceValue = selectedProduct.price.replace(/[^\d.]/g, '');
+
+                    // Clear existing content and add the new price
+                    productPrice.innerHTML = currencySymbol + ' ' + priceValue;
+
+                    // Add original price if available
+                    if (selectedProduct.originalPrice) {
+                        const originalPrice = document.createElement('span');
+                        originalPrice.className = 'original-price';
+                        originalPrice.textContent = selectedProduct.originalPrice;
+                        productPrice.appendChild(originalPrice);
+
+                        // Calculate savings
+                        const originalPriceValue = parseFloat(selectedProduct.originalPrice.replace(/[^\d.]/g, ''));
+                        const currentPriceValue = parseFloat(priceValue);
+
+                        if (!isNaN(originalPriceValue) && !isNaN(currentPriceValue)) {
+                            const savingsAmount = originalPriceValue - currentPriceValue;
+                            const savingsPercentage = (savingsAmount / originalPriceValue * 100).toFixed(0);
+
+                            const priceSavings = document.querySelector('.price-savings');
+                            if (priceSavings) {
+                                priceSavings.textContent = `You save: ${currencySymbol} ${savingsAmount.toFixed(2)} (${savingsPercentage}%)`;
+                            }
+                        }
+                    } else {
+                        // Hide savings element if no original price
+                        const priceSavings = document.querySelector('.price-savings');
+                        if (priceSavings) {
+                            priceSavings.style.display = 'none';
+                        }
+                    }
+                }
+
+                // Update product images
+                if (selectedProduct.imageUrl) {
+                    const mainImage = document.getElementById('mainProductImage');
+                    if (mainImage) {
+                        mainImage.src = selectedProduct.imageUrl;
+                        mainImage.alt = selectedProduct.title;
+                    }
+
+                    // Update thumbnails too
+                    const thumbnails = document.querySelectorAll('.thumbnail img');
+                    thumbnails.forEach(thumbnail => {
+                        thumbnail.src = selectedProduct.imageUrl;
+                        thumbnail.alt = selectedProduct.title;
+                    });
+                }
+
+                // Update features list if available
+                if (selectedProduct.features && selectedProduct.features.length > 0) {
+                    const featuresList = document.querySelector('.key-features ul');
+                    if (featuresList) {
+                        // Clear existing features
+                        featuresList.innerHTML = '';
+
+                        // Add features from selected product
+                        selectedProduct.features.forEach(feature => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<i class="fas fa-check-circle"></i> ${feature}`;
+                            featuresList.appendChild(li);
+                        });
+                    }
+                }
+            } else {
+                console.error('No product data found in localStorage');
+            }
+
+            updateCartCount();
+        });
+
+        // Function to add current product to cart
+        function addToCart() {
+            // Get the selected product from localStorage
+            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+
+            if (!selectedProduct) {
+                console.error('No product data found');
+                return;
+            }
+
+            // Get quantity from input
+            const quantityInput = document.getElementById('quantityInput');
+            const quantity = parseInt(quantityInput.value);
+
+            if (isNaN(quantity) || quantity < 1) {
+                alert('Please select a valid quantity');
+                return;
+            }
+
+            // Get existing cart items or initialize new array
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Create cart item object
+            const cartItem = {
+                id: selectedProduct.id || generateProductId(),
+                title: selectedProduct.title,
+                price: selectedProduct.price.replace(/[^\d.]/g, ''),
+                originalPrice: selectedProduct.originalPrice ? selectedProduct.originalPrice.replace(/[^\d.]/g, '') : null,
+                imageUrl: selectedProduct.imageUrl,
+                quantity: quantity
+            };
+
+            // Check if product already exists in cart
+            const existingItemIndex = cartItems.findIndex(item => item.id === cartItem.id);
+
+            if (existingItemIndex !== -1) {
+                // Update quantity if product exists
+                cartItems[existingItemIndex].quantity += quantity;
+
+                // Ensure quantity doesn't exceed maximum
+                if (cartItems[existingItemIndex].quantity > 10) {
+                    cartItems[existingItemIndex].quantity = 10;
+                }
+            } else {
+                // Add new item to cart
+                cartItems.push(cartItem);
+            }
+
+            // Save updated cart to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Update cart count display
+            updateCartCount();
+
+            // Show success notification
+            showAddToCartSuccess();
+        }
+
+        // Function to generate a unique product ID if none exists
+        function generateProductId() {
+            return 'prod_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        // Show success notification after adding to cart
+        function showAddToCartSuccess() {
+            // Create a temporary notification
+            const notification = document.createElement('div');
+            notification.className = 'cart-notification';
+            notification.innerHTML = `
+        <div class="cart-notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Item added to cart successfully!</span>
+        </div>
+        <div class="cart-notification-actions">
+            <button onclick="window.location.href='cart.html'">View Cart</button>
+            <button onclick="this.parentNode.parentNode.remove()">Continue Shopping</button>
+        </div>
+    `;
+
+            // Add notification to page
+            document.body.appendChild(notification);
+
+            // Remove notification after 5 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Update cart count in navigation
+        function updateCartCount() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartCount = document.getElementById('cartCount');
+
+            if (cartCount) {
+                cartCount.textContent = cartItems.length;
+            }
+        }
+
+        // Add styles for cart notification
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.cart-notification-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-notification-content i {
+    color: #4BB543;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.cart-notification-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-notification-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.cart-notification-actions button:first-child {
+    background-color: #FF6B6B;
+    color: white;
+}
+
+.cart-notification-actions button:last-child {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+`;
+        document.head.appendChild(styleSheet);
+
+        // Function to update main image when clicking thumbnails
+        function updateMainImage(thumbnail) {
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = thumbnail.src;
+
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(item => {
+                item.classList.remove('active');
+            });
+            thumbnail.parentElement.classList.add('active');
+        }
+
+        // Functions for quantity selector
+        function incrementQuantity() {
+            const quantityInput = document.getElementById('quantityInput');
+            const currentValue = parseInt(quantityInput.value);
+            if (currentValue < parseInt(quantityInput.max)) {
+                quantityInput.value = currentValue + 1;
+            }
+        }
+
+        function decrementQuantity() {
+            const quantityInput = document.getElementById('quantityInput');
+            const currentValue = parseInt(quantityInput.value);
+            if (currentValue > parseInt(quantityInput.min)) {
+                quantityInput.value = currentValue - 1;
+            }
+        }
+    </script>
+    <script src="../js/navbar.js"></script>
+</body>
+
+</html>

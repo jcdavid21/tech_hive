@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="img-con">
+                <img src="/assets/logo.jpeg" alt="Logo">
+            </div>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Search Bar Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="nav-section" id="navSection">
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="bestSeller.html"><i class="fas fa-star"></i> Best Seller</a></li>
+                <li><a href="aboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+                <li><a href="login.html" id="profileLink"><i class="fas fa-user"></i> <span id="profileText">Log
+                            In</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="cart-container">
+        <div class="cart-header">
+            <h1 class="cart-title">Shopping Cart <span class="cart-items-count" id="itemsCount">0 items</span></h1>
+        </div>
+
+        <!-- Empty Cart Message (will be hidden when cart has items) -->
+        <div class="cart-empty" id="emptyCartMessage">
+            <i class="fas fa-shopping-cart"></i>
+            <h3>Your cart is empty</h3>
+            <p>Looks like you haven't added any products to your cart yet.</p>
+            <a href="products.html" class="shop-now-btn">Start Shopping</a>
+        </div>
+
+        <!-- Cart Content (will be shown when cart has items) -->
+        <div id="cartContent" style="display: none;">
+            <!-- Cart Items -->
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+
+            <!-- Customer Information -->
+            <div class="customer-info" id="customerInfo">
+                <div class="customer-info-header">
+                    <div class="customer-info-title">Delivery Information</div>
+                    <div class="edit-info-btn" onclick="openCheckoutModal()">
+                        <i class="fas fa-edit"></i> Edit
+                    </div>
+                </div>
+                <div class="customer-info-content" id="customerInfoContent">
+                    <!-- Customer info will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <div class="summary-title">Order Summary</div>
+                <div class="summary-row">
+                    <div>Subtotal</div>
+                    <div id="subtotal">₱ 0.00</div>
+                </div>
+                <div class="summary-row">
+                    <div>Shipping Fee</div>
+                    <div id="shippingFee">₱ 150.00</div>
+                </div>
+                <div class="summary-row total">
+                    <div>Total</div>
+                    <div id="orderTotal">₱ 0.00</div>
+                </div>
+            </div>
+
+            <!-- Cart Actions -->
+            <div class="cart-actions">
+                <a href="products.html" class="continue-shopping">
+                    <i class="fas fa-arrow-left"></i> Continue Shopping
+                </a>
+                <button class="checkout-btn" onclick="proceedToCheckout()">
+                    Proceed to Checkout <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('checkoutModal')">&times;</button>
+            <div class="modal-header">
+                <h2>Complete Your Information</h2>
+            </div>
+            <div class="modal-body">
+                <form class="checkout-form" id="checkoutForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Delivery Address *</label>
+                        <input type="text" id="address" placeholder="Street Address" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Province *</label>
+                            <input type="text" id="province" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postalCode">Postal Code *</label>
+                            <input type="text" id="postalCode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method *</label>
+                            <select id="paymentMethod" required>
+                                <option value="">Select Payment Method</option>
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="gcash">GCash</option>
+                                <option value="paymaya">PayMaya</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Order Notes (Optional)</label>
+                        <textarea id="notes" rows="3" placeholder="Special delivery instructions or notes"></textarea>
+                    </div>
+
+                    <button type="submit">Save Information</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay success-modal" id="successModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('successModal')">&times;</button>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Order Placed Successfully!</h3>
+                <p>Thank you for your purchase. Your order has been received and is being processed.</p>
+                <p>Order Number: <span class="order-number" id="orderNumber">INF-123456</span></p>
+                <p>A confirmation email with your order details has been sent to your email address.</p>
+                <button class="continue-shopping-btn" onclick="finishOrder()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                        <li><a href="termsCondition.html">Terms and Condition</a></li>
+                        <li><a href="privacyPolicy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +63 976 209 6892</p>
+                    <p><i class="fas fa-envelope"></i> Techive@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Our Lady Of Fatima University</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Premium Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load cart items from localStorage
+            loadCart();
+
+            // Check if user has customer info saved and display it
+            loadCustomerInfo();
+
+            // Initialize event handlers
+            document.getElementById('checkoutForm').addEventListener('submit', saveCustomerInfo);
+        });
+
+        // Load cart items from localStorage
+        function loadCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            const cartContent = document.getElementById('cartContent');
+            const itemsCount = document.getElementById('itemsCount');
+            const cartCount = document.getElementById('cartCount');
+
+            // Update cart count badge
+            cartCount.textContent = cartItems.length;
+            itemsCount.textContent = `${cartItems.length} ${cartItems.length === 1 ? 'item' : 'items'}`;
+
+            // Show/hide appropriate sections
+            if (cartItems.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                cartContent.style.display = 'none';
+                return;
+            } else {
+                emptyCartMessage.style.display = 'none';
+                cartContent.style.display = 'block';
+            }
+
+            // Clear existing items
+            cartItemsContainer.innerHTML = '';
+
+            // Total price calculation
+            let subtotal = 0;
+
+            // Add each item to the cart
+            cartItems.forEach((item, index) => {
+                const itemTotal = parseFloat(item.price) * item.quantity;
+                subtotal += itemTotal;
+
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.imageUrl || '/api/placeholder/120/120'}" alt="${item.title}">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-top">
+                            <div class="cart-item-title">${item.title}</div>
+                            <div class="cart-item-remove" onclick="removeFromCart(${index})">
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                        </div>
+                        <div class="cart-item-price">
+                            ₱ ${parseFloat(item.price).toFixed(2)}
+                            ${item.originalPrice ? `<span class="cart-item-original-price">₱ ${parseFloat(item.originalPrice).toFixed(2)}</span>` : ''}
+                        </div>
+                        <div class="cart-item-quantity">
+                            <span>Quantity:</span>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" onclick="updateCartItemQuantity(${index}, ${item.quantity - 1})">-</button>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" max="10" 
+                                       onchange="updateCartItemQuantity(${index}, this.value)">
+                                <button class="quantity-btn" onclick="updateCartItemQuantity(${index}, ${item.quantity + 1})">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                cartItemsContainer.appendChild(cartItemElement);
+            });
+
+            // Update the summary
+            updateOrderSummary(subtotal);
+        }
+
+        // Update order summary
+        function updateOrderSummary(subtotal) {
+            const subtotalElement = document.getElementById('subtotal');
+            const orderTotalElement = document.getElementById('orderTotal');
+            const shippingFee = parseFloat(document.getElementById('shippingFee').textContent.replace(/[^\d.]/g, '')) || 150;
+
+            // Update subtotal
+            subtotalElement.textContent = `₱ ${subtotal.toFixed(2)}`;
+
+            // Calculate and update order total
+            const total = subtotal + shippingFee;
+            orderTotalElement.textContent = `₱ ${total.toFixed(2)}`;
+        }
+
+        // Remove item from cart
+        function removeFromCart(index) {
+            // Get cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Remove the item at the specified index
+            cartItems.splice(index, 1);
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Reload the cart
+            loadCart();
+        }
+
+        // Update cart item quantity
+        function updateCartItemQuantity(index, newQuantity) {
+            // Get cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Ensure quantity is valid
+            newQuantity = parseInt(newQuantity);
+            if (isNaN(newQuantity) || newQuantity < 1) {
+                newQuantity = 1;
+            } else if (newQuantity > 10) {
+                newQuantity = 10;
+            }
+
+            // Update quantity for the item at the specified index
+            cartItems[index].quantity = newQuantity;
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Reload the cart
+            loadCart();
+        }
+
+        // Load customer information from localStorage
+        function loadCustomerInfo() {
+            const customerInfo = JSON.parse(localStorage.getItem('customerInfo'));
+            const customerInfoContent = document.getElementById('customerInfoContent');
+            const customerInfoSection = document.getElementById('customerInfo');
+
+            if (customerInfo) {
+                // Show the customer info section
+                customerInfoSection.style.display = 'block';
+
+                // Map to display friendly names for payment methods
+                const paymentMethodNames = {
+                    'cod': 'Cash on Delivery',
+                    'card': 'Credit/Debit Card',
+                    'gcash': 'GCash',
+                    'paymaya': 'PayMaya'
+                };
+
+                // Fill the customer info section
+                customerInfoContent.innerHTML = `
+                    <div class="info-item">
+                        <div class="info-label">Name</div>
+                        <div class="info-value">${customerInfo.firstName} ${customerInfo.lastName}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Email</div>
+                        <div class="info-value">${customerInfo.email}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Phone</div>
+                        <div class="info-value">${customerInfo.phone}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Address</div>
+                        <div class="info-value">${customerInfo.address}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">City</div>
+                        <div class="info-value">${customerInfo.city}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Province</div>
+                        <div class="info-value">${customerInfo.province}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Postal Code</div>
+                        <div class="info-value">${customerInfo.postalCode}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Payment Method</div>
+                        <div class="info-value">${paymentMethodNames[customerInfo.paymentMethod] || customerInfo.paymentMethod}</div>
+                    </div>
+                    ${customerInfo.notes ? `
+                    <div class="info-item" style="grid-column: span 2;">
+                        <div class="info-label">Notes</div>
+                        <div class="info-value">${customerInfo.notes}</div>
+                    </div>` : ''}
+                `;
+
+                // Pre-fill the checkout form
+                document.getElementById('firstName').value = customerInfo.firstName;
+                document.getElementById('lastName').value = customerInfo.lastName;
+                document.getElementById('email').value = customerInfo.email;
+                document.getElementById('phone').value = customerInfo.phone;
+                document.getElementById('address').value = customerInfo.address;
+                document.getElementById('city').value = customerInfo.city;
+                document.getElementById('province').value = customerInfo.province;
+                document.getElementById('postalCode').value = customerInfo.postalCode;
+                document.getElementById('paymentMethod').value = customerInfo.paymentMethod;
+                document.getElementById('notes').value = customerInfo.notes || '';
+            }else{
+                // Hide the customer info section if no info is saved
+                customerInfoSection.style.display = 'none';
+            }
+        } 
+
+    // Save customer information to localStorage
+    function saveCustomerInfo(e) {
+        e.preventDefault();
+        
+        // Gather form data
+        const customerInfo = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            province: document.getElementById('province').value,
+            postalCode: document.getElementById('postalCode').value,
+            paymentMethod: document.getElementById('paymentMethod').value,
+            notes: document.getElementById('notes').value
+        };
+        
+        // Save to localStorage
+        localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
+        
+        // Close modal
+        closeModal('checkoutModal');
+        
+        // Reload customer info display
+        loadCustomerInfo();
+    }
+
+    // Open checkout modal
+    function openCheckoutModal() {
+        const modal = document.getElementById('checkoutModal');
+        modal.style.display = 'flex';
+    }
+
+    // Close modal
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+    }
+
+    // Generate random order number for success modal
+    function generateOrderNumber() {
+        const prefix = 'INF-';
+        const randomNum = Math.floor(100000 + Math.random() * 900000);
+        return prefix + randomNum;
+    }
+
+    // Proceed to checkout function
+    function proceedToCheckout() {
+        // Check if customer info is already saved
+        const customerInfo = JSON.parse(localStorage.getItem('customerInfo'));
+        
+        if (!customerInfo) {
+            // If no customer info, open modal to collect it
+            openCheckoutModal();
+            return;
+        }
+        
+        // Generate order number
+        const orderNumber = generateOrderNumber();
+        document.getElementById('orderNumber').textContent = orderNumber;
+        
+        // Show success modal
+        const successModal = document.getElementById('successModal');
+        successModal.style.display = 'flex';
+    }
+
+    // Finish order and redirect to products page
+    function finishOrder() {
+        // Clear cart
+        localStorage.setItem('cartItems', JSON.stringify([]));
+        
+        // Close modal
+        closeModal('successModal');
+        
+        // Redirect to products page
+        window.location.href = 'products.html';
+    }
+
+    // Mobile menu toggle function
+    function toggleMobileMenu() {
+        const navSection = document.getElementById('navSection');
+        navSection.classList.toggle('active');
+    }
+    </script>
+
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tech Hive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/aboutUs.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="img-con">
+                <img src="/assets/logo.jpeg" alt="Logo">
+            </div>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Search Bar Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products..." id="searchInput">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="nav-section" id="navSection">
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="bestSeller.html"><i class="fas fa-star"></i> Best Seller</a></li>
+                <li><a href="aboutUs.html" class="active"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+                <li><a href="login.html" id="profileLink"><i class="fas fa-user"></i> <span id="profileText">Log In</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Us Content -->
+    <div class="about-section">
+
+        <!-- Main About Content -->
+        <div class="about-content">
+            <div class="about-image">
+                <img src="../assets/about-us-1.avif" alt="Tech Hive Store">
+            </div>
+            <div class="about-text">
+                <h2>Welcome to Tech Hive</h2>
+                <p>At Tech Hive, we live and breathe technology. From smartphones and laptops to smart home devices, audio gear, wearables, and gaming accessories, our mission is to bring you the best in tech, all in one place.</p>
+                <p>Founded with a vision to create a buzzing hub for tech lovers, we partner with top brands and trusted suppliers to ensure every product we offer meets the highest standards of quality, performance, and reliability. Whether you're a casual shopper, a hardcore gamer, or a tech-savvy professional, we've got something for everyone.</p>
+                <p>More than just a store, Tech Hive is a community where innovation meets inspiration. Our team stays ahead of the curve to bring you the latest trends, honest reviews, and unbeatable deals so you can stay connected, productive, and entertained.</p>
+                <p>Tech Hive—where technology comes to life.</p>
+            </div>
+        </div>
+
+        <!-- Our Story Section -->
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>Tech Hive was born in 2020 when a group of tech enthusiasts recognized the need for a comprehensive electronics store that offered more than just products—a place that provided expertise, community, and passion for technology.</p>
+                <p>What started as a small online shop has now grown into a trusted technology retailer serving customers nationwide. Throughout our journey, our commitment to quality and customer satisfaction has never wavered.</p>
+                <p>We began with just five team members and a handful of products. Today, we proudly offer thousands of products across dozens of categories, with a dedicated team of technology experts ready to help you find exactly what you need.</p>
+                <p>Our growth has been fueled by our loyal customers who appreciate our honest approach, competitive pricing, and commitment to staying on the cutting edge of technology.</p>
+            </div>
+            <div class="about-image">
+                <img src="../assets/about-us-2.avif" alt="Tech Hive Journey">
+            </div>
+        </div>
+
+        <!-- Our Values -->
+        <div class="values-section">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Innovation</h3>
+                    <p>We constantly seek the newest and most innovative products to keep our customers at the forefront of technology.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Quality</h3>
+                    <p>We rigorously test and verify all products to ensure they meet our high standards for performance and reliability.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community</h3>
+                    <p>We foster a community of tech enthusiasts who share knowledge, experiences, and passion for technology.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Customer Care</h3>
+                    <p>We prioritize your satisfaction with personalized service, expert advice, and responsive support.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Trust</h3>
+                    <p>We build lasting relationships through transparent business practices and honest product recommendations.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Sustainability</h3>
+                    <p>We're committed to reducing our environmental impact through eco-friendly packaging and energy-efficient operations.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                        <li><a href="termsCondition.html">Terms and Condition</a></li>
+                        <li><a href="privacyPolicy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +63 976 209 6892</p>
+                    <p><i class="fas fa-envelope"></i> Techive@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Our Lady Of Fatima University</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tech Hive. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>
