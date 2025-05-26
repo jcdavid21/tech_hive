@@ -57,16 +57,39 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
+.category-filter,
+.sort-filter, .brand-filter {
+    padding: 10px 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    background: white;
+    font-size: 1rem;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
 .category-filter:hover,
-.sort-filter:hover {
+.sort-filter:hover, .brand-filter:hover {
     border-color: rgb(179, 134, 70);
 }
 
 .category-filter:focus,
-.sort-filter:focus {
+.sort-filter:focus, .brand-filter:focus {
     outline: none;
     border-color: rgb(179, 134, 70);
+}
+
+
+#nextPageBtn, #prevPageBtn {
+    padding: 10px 20px;
+    background: #FF8C00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .results-count {
@@ -76,7 +99,7 @@
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -283,7 +306,7 @@
 .product-btn {
     width: 100%;
     padding: 12px;
-    background: rgb(179, 134, 70);
+    background: #FF8C00;
     color: white;
     border: none;
     border-radius: 8px;
@@ -294,7 +317,7 @@
 }
 
 .product-btn:hover {
-    background: rgb(217, 165, 91);
+    background: #dc7d08;
     transform: translateY(-2px);
 }
 

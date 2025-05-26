@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/content.css">
     <link rel="stylesheet" href="styles/footer.css">
+
 </head>
 
 <body>
@@ -49,7 +50,8 @@
                         <span class="cart-count" id="cartCount">0</span>
                     </a>
                 </li>
-                <li><a href="components/login.html" id="profileLink"><i class="fas fa-user"></i> <span id="profileText">Log
+                <li><a href="components/login.html" id="profileLink"><i class="fas fa-user"></i> <span
+                            id="profileText">Log
                             In</span></a></li>
             </ul>
         </div>
@@ -149,163 +151,45 @@
             <div class="container">
                 <h2>Trending Electronics</h2>
                 <p class="section-subtitle">Discover the latest and most popular gadgets</p>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="assets/products/infinix.webp" alt="Smartphone">
-                            <span class="product-badge">New</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Infinix Hot 50 Pro+ Smartphone with FREE Lenovo HF130 Wired Earphone</h3>
-                            <div class="product-price">
-                                &#8369; 8,499.00
-                                <span class="original-price">&#8369; 10,499.00</span>
-                            </div>
-                            <div class="product-rating">
-                                <div class="rating-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-count">(2,456 reviews)</span>
-                            </div>
+                <div class="filter-section">
+                    <select class="category-filter" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="smartphones">Smartphones</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="headphones">Headphones</option>
+                        <option value="smartwatch">Smartwatches</option>
+                        <option value="console">Gaming Consoles</option>
+                    </select>
 
-                            <div class="hidden-features">
-                                <input type="hidden" class="feature"
-                                    value="Infinix Hot 50 Pro+ Smartphone with FREE Lenovo HF130 Wired Earphone">
-                                <input type="hidden" class="feature" value="Infinix">
-                                <input type="hidden" class="feature" value="Smartphone">
-                                <input type="hidden" class="feature" value="+6GB RAM + 128GB Storage">
-                                <input type="hidden" class="feature" value="6.78 inches">
-                                <input type="hidden" class="feature" value="5000 mAh Battery">
-                                <input type="hidden" class="feature" value="Android 13">
-                                <input type="hidden" class="feature" value="64MP + 2MP Dual Rear Camera">
-                                <!-- description -->
-                                <input type="hidden" class="description"
-                                    value="This product is a smartphone that comes with a 6.78-inch display and is powered by Android 13. It features a dual rear camera setup with a 64MP main camera and a 2MP secondary camera. The phone has 6GB of RAM and 128GB of storage, along with a powerful 5000 mAh battery. It also includes a FREE Lenovo HF130 wired earphone for an enhanced audio experience.">
-                            </div>
-                            <button class="product-btn">
-                                <i class="fas fa-cart-plus"></i> Add to Cart
-                            </button>
-                        </div>
-                    </div>
+                    <select class="sort-filter" id="sortFilter">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest First</option>
+                        <option value="name-az">Name: A to Z</option>
+                        <option value="name-za">Name: Z to A</option>
+                    </select>
 
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="assets/products/ASUS-ROG.webp" alt="Laptop">
-                            <span class="product-badge">Hot</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Asus-ROG Strix G17 2023 17.3” QHD 240Hz Gaming Laptop, Ryzen 9-7845HX, RTX 4060, 16GB RAM, 1TB SSD</h3>
-                            <div class="product-price">
-                                &#8369; 80,499
-                                <span class="original-price">&#8369; 100,899</span>
-                            </div>
-                            <div class="product-rating">
-                                <div class="rating-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span class="rating-count">(1,892 reviews)</span>
-                            </div>
-                                <div class="hidden-features">
-                                    <input type="hidden" class="feature" value="Asus-ROG Strix G17 2023 17.3” QHD 240Hz Gaming Laptop, Ryzen 9-7845HX, RTX 4060, 16GB RAM, 1TB SSD">
-                                    <input type="hidden" class="feature" value="Asus">
-                                    <input type="hidden" class="feature" value="+16GB RAM + 1TB SSD">
-                                    <input type="hidden" class="feature" value="17.3 inches">
-                                    <input type="hidden" class="feature" value="90WHrs Battery">
-                                    <input type="hidden" class="feature" value="Windows 11 Home">
-                                    <input type="hidden" class="feature" value="RTX 4060 Graphics Card">
-                                    <!-- description -->
-                                    <input type="hidden" class="description" value="This product is a high-performance gaming laptop with a 17.3-inch QHD display and a 240Hz refresh rate. It is powered by an AMD Ryzen 9-7845HX processor and an NVIDIA RTX 4060 graphics card, making it ideal for gaming and demanding applications. The laptop comes with 16GB of RAM and a 1TB SSD for fast storage and multitasking capabilities.">
-                                </div>
-                            <button class="product-btn">
-                                <i class="fas fa-cart-plus"></i> Add to Cart
-                            </button>
-                        </div>
-                    </div>
+                    <select name="brand" id="brand" class="brand-filter">
+                        <option value="all">All Brands</option>
+                    </select>
+                </div>
 
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="assets/products/MUW33.jpeg" alt="Headphones">
-                            <span class="product-badge">Sale</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Beats Solo 4 — On-Ear Wireless Headphones — Cloud Pink</h3>
-                            <div class="product-price">
-                                &#8369; 9,490.00
-                                <span class="original-price">&#8369; 10,490.00</span>
-                            </div>
-                            <div class="product-rating">
-                                <div class="rating-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-count">(3,421 reviews)</span>
-                            </div>
-                                <div class="hidden-features">
-                                    <input type="hidden" class="feature" value="Beats Solo 4 — On-Ear Wireless Headphones — Cloud Pink">
-                                    <input type="hidden" class="feature" value="Beats">
-                                    <input type="hidden" class="feature" value="+40 hours Battery Life">
-                                    <input type="hidden" class="feature" value="On-Ear Design">
-                                    <input type="hidden" class="feature" value="Bluetooth 5.0">
-                                    <input type="hidden" class="feature" value="Noise Isolation">
-                                    <input type="hidden" class="feature" value="Built-in Microphone">
-                                    <!-- description -->
-                                    <input type="hidden" class="description" value="This product is a pair of on-ear wireless headphones with a sleek design and a vibrant Cloud Pink color. It features Bluetooth 5.0 technology for seamless connectivity, up to 40 hours of battery life, and a built-in microphone for hands-free calls. The headphones are designed to provide noise isolation for an immersive listening experience.">
-                                </div>
-                            <button class="product-btn">
-                                <i class="fas fa-cart-plus"></i> Add to Cart
-                            </button>
-                        </div>
-                    </div>
+                <div class="product-grid" id="trendingProductsGrid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
 
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="assets/products/apple-watch.webp" alt="Smart Watch">
-                            <span class="product-badge">Limited</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Apple Watch Series 10 with Sport Band</h3>
-                            <div class="product-price">
-                                &#8369; 28,490.00
-                                <span class="original-price">&#8369; 21,490.00</span>
-                            </div>
-                            <div class="product-rating">
-                                <div class="rating-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span class="rating-count">(1,567 reviews)</span>
-                            </div>
-                                <div class="hidden-features">
-                                    <input type="hidden" class="feature" value="Apple Watch Series 10 with Sport Band">
-                                    <input type="hidden" class="feature" value="Apple">
-                                    <input type="hidden" class="feature" value="Smart Watch">
-                                    <input type="hidden" class="feature" value="+32GB Storage + 1.9 inches Display">
-                                    <input type="hidden" class="feature" value="GPS + Cellular Connectivity">
-                                    <input type="hidden" class="feature" value="Heart Rate Monitor">
-                                    <input type="hidden" class="feature" value="Water Resistant">
-                                    <input type="hidden" class="feature" value="Fitness Tracking">
-                                    <!-- description -->
-                                    <input type="hidden" class="description" value="This product is a smartwatch that combines advanced technology with a stylish design. It features a 1.9-inch display, GPS and cellular connectivity, and a heart rate monitor. The watch is water-resistant and includes fitness tracking capabilities, making it perfect for an active lifestyle.">
-                                </div>
-                            <button class="product-btn">
-                                <i class="fas fa-cart-plus"></i> Add to Cart
-                            </button>
-                        </div>
-                    </div>
+                <!-- Pagination Controls -->
+                <div class="pagination-controls"
+                    style="display: flex; justify-content: center; align-items: center; margin-top: 30px; gap: 15px;">
+                    <button id="prevPageBtn">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <span id="pageInfo" style="font-weight: bold; color: #333; font-size: 16px;">Page 1 of 1</span>
+                    <button id="nextPageBtn">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -432,7 +316,8 @@
                 <h2>Testimonials</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <p class="testimonial-text">"TechHive has the best prices and fastest delivery. Got my new laptop
+                        <p class="testimonial-text">"TechHive has the best prices and fastest delivery. Got my new
+                            laptop
                             in just one day!"</p>
                         <div class="testimonial-author">
                             <div class="author-info">
@@ -464,7 +349,7 @@
 
                     <div class="testimonial-card">
                         <p class="testimonial-text">
-                            "Everything I bought from TechHive has been top-notch. The quality is cheap"    
+                            "Everything I bought from TechHive has been top-notch. The quality is cheap"
                         </p>
                         </p>
                         <div class="testimonial-author">
@@ -481,7 +366,7 @@
 
                     <div class="testimonial-card">
                         <p class="testimonial-text">
-                            "The customer service is top-notch! They helped me choose the right"    
+                            "The customer service is top-notch! They helped me choose the right"
                         </p>
                         </p>
                         <div class="testimonial-author">
@@ -558,10 +443,296 @@
         </div>
     </footer>
 
-    <!-- Include the JavaScript files -->
+    <script src="js/items.js"></script>
+    <script>
+        // Global variables
+        let currentPage = 1;
+        const itemsPerPage = 3;
+        let currentFilteredProducts = []; // Store currently filtered products
+        let allProducts = []; // Store all products
+
+        // Initialize the system
+        function initializeProductSystem() {
+            // Assume products array is available globally
+            if (typeof products !== 'undefined') {
+                allProducts = [...products];
+                currentFilteredProducts = [...products];
+                setupBrandOptions();
+                displayProducts();
+            } else {
+                console.error('Products array not found. Please ensure products data is loaded.');
+            }
+        }
+
+        // Setup brand options dynamically
+        function setupBrandOptions() {
+            const brandSelect = document.getElementById('brand');
+            if (brandSelect) {
+                // Clear existing options except "All Brands"
+                brandSelect.innerHTML = '<option value="all">All Brands</option>';
+
+                const brandsInProduct = [...new Set(allProducts.map(product => product.brand))];
+                brandsInProduct.forEach(brand => {
+                    const option = document.createElement('option');
+                    option.value = brand.toLowerCase();
+                    option.textContent = brand;
+                    brandSelect.appendChild(option);
+                });
+            }
+        }
+
+        // Main function to display products with pagination
+        function displayProducts() {
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const currentProducts = currentFilteredProducts.slice(startIndex, endIndex);
+
+            const gridContainer = document.getElementById('trendingProductsGrid');
+            if (!gridContainer) {
+                console.error('Product grid container not found');
+                return;
+            }
+
+            gridContainer.innerHTML = '';
+
+            if (currentProducts.length === 0) {
+                gridContainer.innerHTML = '<div class="no-products">No products found matching your criteria.</div>';
+                updatePaginationControls();
+                return;
+            }
+
+            currentProducts.forEach(product => {
+                const productCard = createProductCard(product);
+                gridContainer.appendChild(productCard);
+            });
+
+            updatePaginationControls();
+        }
+
+        // Create individual product card
+        function createProductCard(product) {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.setAttribute('data-product-id', product.id || product.title); // Use title as fallback
+
+            // Generate rating stars
+            const starsHTML = generateStarRating(product.rating);
+
+            productCard.innerHTML = `
+        <div class="product-image">
+            <img src="assets/products/${product.imageUrl}" alt="${product.title}" onerror="this.src='assets/products/placeholder.jpg'">
+            <span class="product-badge">${product.badge || ''}</span>
+        </div>
+        <div class="product-info">
+            <h3 class="product-title">${product.title}</h3>
+            <div class="product-price">
+                ${product.price}
+                <span class="original-price">${product.price}</span>
+            </div>
+            <div class="product-rating">
+                <div class="rating-stars">
+                    ${starsHTML}
+                </div>
+                <span class="rating-count">(${product.ratingCount} reviews)</span>
+            </div>
+            <div class="hidden-features">
+                <input type="hidden" class="feature" value="${product.title}">
+                ${(product.feature || []).map(feature => `<input type="hidden" class="feature" value="${feature}">`).join('')}
+                <input type="hidden" class="description" value="${product.description || ''}">
+            </div>
+            <div class="hidden-reviews" style="display: none;">
+                ${(product.reviews || []).map(review => `
+                    <div class="review">
+                        <p class="review-stars">${review.stars}</p>
+                        <p class="review-name">${review.name}</p>
+                        <p class="review-comment">${review.comment}</p>
+                        <p class="review-date">${new Date(review.date).toLocaleDateString()}</p>
+                    </div>
+                `).join('')}
+            </div>
+            <button class="product-btn" onclick="addToCart('${product.id || product.title}')">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+        </div>
+    `;
+
+            return productCard;
+        }
+
+        // Generate star rating HTML
+        function generateStarRating(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            let starsHTML = '';
+
+            // Full stars
+            for (let i = 0; i < fullStars; i++) {
+                starsHTML += '<i class="fas fa-star"></i>';
+            }
+
+            // Half star
+            if (hasHalfStar) {
+                starsHTML += '<i class="fas fa-star-half-alt"></i>';
+            }
+
+            // Empty stars
+            const remainingStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < remainingStars; i++) {
+                starsHTML += '<i class="far fa-star"></i>';
+            }
+
+            return starsHTML;
+        }
+
+        // Update pagination controls
+        function updatePaginationControls() {
+            const totalPages = Math.ceil(currentFilteredProducts.length / itemsPerPage);
+            const prevBtn = document.getElementById('prevPageBtn');
+            const nextBtn = document.getElementById('nextPageBtn');
+            const pageInfo = document.getElementById('pageInfo');
+
+            if (prevBtn && nextBtn && pageInfo) {
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+                // Style disabled buttons
+                prevBtn.style.opacity = currentPage === 1 ? '0.5' : '1';
+                nextBtn.style.opacity = (currentPage === totalPages || totalPages === 0) ? '0.5' : '1';
+                prevBtn.style.cursor = currentPage === 1 ? 'not-allowed' : 'pointer';
+                nextBtn.style.cursor = (currentPage === totalPages || totalPages === 0) ? 'not-allowed' : 'pointer';
+
+                pageInfo.textContent = totalPages === 0 ? 'No pages' : `Page ${currentPage} of ${totalPages}`;
+            }
+        }
+
+        // Change page function
+        function changePage(direction) {
+            const totalPages = Math.ceil(currentFilteredProducts.length / itemsPerPage);
+            const newPage = currentPage + direction;
+
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                displayProducts();
+
+                // Scroll to trending section
+                const trendingSection = document.querySelector('.trending-section');
+                if (trendingSection) {
+                    trendingSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Apply all filters
+        function applyFilters() {
+            let filteredProducts = [...allProducts];
+
+            // Get current filter values
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortFilter = document.getElementById('sortFilter');
+            const brandSelect = document.getElementById('brand');
+
+            // Apply category filter
+            if (categoryFilter && categoryFilter.value !== 'all') {
+                filteredProducts = filteredProducts.filter(product =>
+                    product.category === categoryFilter.value
+                );
+            }
+
+            // Apply brand filter
+            if (brandSelect && brandSelect.value !== 'all') {
+                filteredProducts = filteredProducts.filter(product =>
+                    product.brand.toLowerCase() === brandSelect.value
+                );
+            }
+
+            // Apply sorting
+            if (sortFilter && sortFilter.value !== 'default') {
+                const selectedSort = sortFilter.value;
+
+                switch (selectedSort) {
+                    case 'price-low':
+                        filteredProducts.sort((a, b) =>
+                            parseFloat(a.price.replace(/[^0-9.-]+/g, "")) -
+                            parseFloat(b.price.replace(/[^0-9.-]+/g, ""))
+                        );
+                        break;
+                    case 'price-high':
+                        filteredProducts.sort((a, b) =>
+                            parseFloat(b.price.replace(/[^0-9.-]+/g, "")) -
+                            parseFloat(a.price.replace(/[^0-9.-]+/g, ""))
+                        );
+                        break;
+                    case 'rating':
+                        filteredProducts.sort((a, b) => b.rating - a.rating);
+                        break;
+                    case 'newest':
+                        filteredProducts.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+                        break;
+                    case 'name-az':
+                        filteredProducts.sort((a, b) => a.title.localeCompare(b.title));
+                        break;
+                    case 'name-za':
+                        filteredProducts.sort((a, b) => b.title.localeCompare(a.title));
+                        break;
+                }
+            }
+
+            // Update filtered products and reset to first page
+            currentFilteredProducts = filteredProducts;
+            currentPage = 1;
+            displayProducts();
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Category filter
+            const categoryFilter = document.getElementById('categoryFilter');
+            if (categoryFilter) {
+                categoryFilter.addEventListener('change', applyFilters);
+            }
+
+            // Sort filter
+            const sortFilter = document.getElementById('sortFilter');
+            if (sortFilter) {
+                sortFilter.addEventListener('change', applyFilters);
+            }
+
+            // Brand filter
+            const brandSelect = document.getElementById('brand');
+            if (brandSelect) {
+                brandSelect.addEventListener('change', applyFilters);
+            }
+
+            // Pagination buttons
+            const prevBtn = document.getElementById('prevPageBtn');
+            const nextBtn = document.getElementById('nextPageBtn');
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => changePage(-1));
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => changePage(1));
+            }
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeProductSystem();
+            setupEventListeners();
+        });
+
+        // Legacy function for backward compatibility
+        function displayTrendingProducts() {
+            displayProducts();
+        }
+    </script>
     <script src="js/navbar.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/displayItem.js"></script>
+
 </body>
 
 </html>

@@ -7,7 +7,7 @@ class HeroSlider {
         this.nextButton = document.querySelector('.slider-arrow.next');
         this.currentSlideIndex = 0;
         this.autoSlideInterval = null;
-        this.autoSlideDelay = 2000; // 5 seconds
+        this.autoSlideDelay = 4000; // 5 seconds
 
         this.init();
     }

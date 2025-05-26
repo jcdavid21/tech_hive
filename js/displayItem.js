@@ -1,14 +1,14 @@
-// Select all product buttons with the correct class name
-const productBtns = document.querySelectorAll('.product-btn');
-
-// Add click event listeners to each button
-productBtns.forEach((btn) => {
-    btn.addEventListener('click', function(e) {
+document.addEventListener('click', function(e) {
+    // Check if the clicked element has the product-btn class
+    if (e.target.classList.contains('product-btn') || e.target.closest('.product-btn')) {
         // Prevent the default button action
         e.preventDefault();
         
+        // Get the actual button element (in case an icon inside was clicked)
+        const btn = e.target.closest('.product-btn') || e.target;
+        
         // Find the parent product card element
-        const productCard = this.closest('.product-card');
+        const productCard = btn.closest('.product-card');
         
         // Extract product details from the card
         const productTitle = productCard.querySelector('.product-title').textContent;
@@ -66,8 +66,30 @@ productBtns.forEach((btn) => {
             productDescription = descriptionElement.value.trim();
         }
         
-        // Generate a unique ID using the product title
-        const productId = 'prod_' + productTitle.replace(/\s+/g, '_').toLowerCase().substring(0, 15);
+        // get product-id
+        const productId = productCard.getAttribute('data-product-id');
+        if (!productId) {
+            console.error('Product ID not found in the product card.');
+            return;
+        }
+        
+        const reviews = [];
+        const hiddenReviews = productCard.querySelectorAll('.hidden-reviews .review');
+        if (hiddenReviews.length > 0) {
+            hiddenReviews.forEach(review => {
+                const reviewName = review.querySelector('.review-name').textContent.trim();
+                const reviewRating = review.querySelector('.review-stars').textContent.trim();
+                const reviewDate = review.querySelector('.review-date').textContent.trim();
+                const reviewComment = review.querySelector('.review-comment') ? review.querySelector('.review-comment').textContent.trim() : '';
+                reviews.push({
+                    name: reviewName,
+                    rating: reviewRating,
+                    date: reviewDate,
+                    comment: reviewComment
+                });
+            });
+        }
+
         
         // Create product object to save to localStorage
         const productData = {
@@ -80,7 +102,8 @@ productBtns.forEach((btn) => {
             rating: rating,
             ratingCount: ratingCount,
             features: features,
-            description: productDescription
+            description: productDescription,
+            reviews: reviews
         };
         
         // Save the selected product to localStorage
@@ -88,5 +111,5 @@ productBtns.forEach((btn) => {
         
         // Redirect to the item details page
         window.location.href = 'components/item.html';
-    });
+    }
 });

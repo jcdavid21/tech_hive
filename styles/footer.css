@@ -23,7 +23,7 @@ footer .container {
 }
 
 .footer {
-    background: var(--primary-color);
+    background: #FF8C00;
     color: #333;
     padding: 60px 0 20px;
 }
@@ -76,12 +76,12 @@ footer .container {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: rgb(199, 151, 83);
+    background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #e8e8e8;
+    color: #FF8C00;
     text-decoration: none;
     transition: var(--transition);
 }

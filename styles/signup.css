@@ -34,7 +34,7 @@
 }
 
 .signup-header h1 {
-    color: var(--primary-brown);
+    color: #dc7d08;
     font-size: 24px;
     margin-bottom: 8px;
 }
@@ -81,7 +81,7 @@
 .signup-form input[type="email"]:focus,
 .signup-form input[type="password"]:focus,
 .signup-form input[type="tel"]:focus {
-    border-color: var(--primary-brown);
+    border-color: #dc7d08;
     outline: none;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .terms a {
-    color: var(--primary-brown);
+    color: #dc7d08;
     text-decoration: none;
 }
 
@@ -126,7 +126,7 @@
 
 .signup-btn {
     width: 100%;
-    background-color: var(--primary-brown);
+    background-color: #FF8C00;
     color: var(--white);
     border: none;
     padding: 12px;
@@ -139,7 +139,7 @@
 }
 
 .signup-btn:hover {
-    background-color: var(--secondary-brown);
+    background-color: #dc7d08;
 }
 
 .login-link {
@@ -150,7 +150,7 @@
 }
 
 .login-link a {
-    color: var(--primary-brown);
+    color: #dc7d08;
     text-decoration: none;
     font-weight: 500;
 }

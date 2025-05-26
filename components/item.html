@@ -120,6 +120,70 @@
                 </button>
             </div>
         </div>
+
+        <!-- Reviews Section - Add this after the product-detail div -->
+        <div class="reviews-section">
+            <div class="reviews-header">
+                <h2>Customer Reviews</h2>
+                <div class="reviews-summary">
+                </div>
+            </div>
+
+            <div class="reviews-list">
+                <!-- Individual Review Item -->
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4 class="reviewer-name">John Martinez</h4>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-date">March 15, 2025</div>
+                    </div>
+                    <div class="review-content">
+                        <p>Excellent phone! The camera quality is amazing and the battery life exceeds my expectations.
+                            Fast charging works great too. Highly recommended for the price point.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-review">
+                <h3>Submit Your Review</h3>
+                <form id="reviewForm">
+                    <div class="flex">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name:</label>
+                            <input type="text" id="reviewerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewRating">Rating:</label>
+                            <select id="reviewRating" required>
+                                <option value="" disabled selected>Select Rating</option>
+                                <option value="5">5 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="3">3 Stars</option>
+                                <option value="2">2 Stars</option>
+                                <option value="1">1 Star</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewComment">Your Review:</label>
+                        <textarea id="reviewComment" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-review-btn">Submit Review</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -213,6 +277,41 @@
                         } else {
                             ratingStars[i].className = 'far fa-star'; // Empty star
                         }
+                    }
+                }
+
+                if (selectedProduct.reviews) {
+                    const reviewsList = document.querySelector('.reviews-list');
+                    if (reviewsList) {
+                        // Clear existing reviews
+                        reviewsList.innerHTML = '';
+
+                        // Add reviews from selected product
+                        selectedProduct.reviews.forEach(review => {
+                            const reviewItem = document.createElement('div');
+                            reviewItem.className = 'review-item';
+                            reviewItem.innerHTML = `
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <div class="reviewer-avatar">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="reviewer-details">
+                                            <h4 class="reviewer-name">${review.name}</h4>
+                                            <div class="review-rating">
+                                                ${'<i class="fas fa-star"></i>'.repeat(review.rating)}
+                                                ${'<i class="far fa-star"></i>'.repeat(5 - review.rating)}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-date">${new Date(review.date).toLocaleDateString()}</div>
+                                </div>
+                                <div class="review-content">
+                                    <p>${review.comment}</p>
+                                </div>
+                            `;
+                            reviewsList.appendChild(reviewItem);
+                        });
                     }
                 }
 
